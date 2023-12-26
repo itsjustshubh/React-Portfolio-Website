@@ -18,7 +18,7 @@ import { backgroundVideo,
 
 import {
     // Some Built in Icons
-    faAirbnb, faApple, faAws, faCcVisa, faChrome, faGithub, faHackerNews, faLinkedin, faMedium, faYoutube
+    faAirbnb, faApple, faAws, faCcVisa, faChrome, faGithub, faLinkedin, faMedium, faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 
 import {

@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import './Home.css';
 import {data, skills} from "../Content";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ReactTyped from "typewriter-effect";
 import imageOne from '../../assets/images/home/image-one.png';
 import imageTwo from '../../assets/images/home/image-two.png';
@@ -13,12 +13,7 @@ function Home({loaded}) {
   const [slideLoading, setSlideLoading] = useState(false);
   const [showReadMore, setShowReadMore] = useState(false);
   const [showImage, setShowImage] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
 
   // Effects for loading and cursor movement
   useEffect(() => {

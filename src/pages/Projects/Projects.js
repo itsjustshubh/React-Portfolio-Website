@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { projects } from '../Content'; // Update the path if necessary
 import './Projects.css';
@@ -36,15 +36,6 @@ function Projects() {
     }, []);
 
     const renderButton = (button, key) => {
-        const handleButtonClick = (e) => {
-        e.preventDefault();
-        if (button.buttonLink.startsWith('/')) {
-            navigate(button.buttonLink);
-        } else {
-            window.open(button.buttonLink, '_blank');
-        }
-    };
-
         return (
             <div className="ac_btn" key={key}
                  style={{
