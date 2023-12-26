@@ -2,10 +2,6 @@ import React from 'react';
 import AnimatedCursor from 'react-animated-cursor';
 import { styling } from "../Content";
 import './Layout.css';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 
 function Layout({ children }) {
   const cursorConfig = {
@@ -20,20 +16,6 @@ function Layout({ children }) {
   return (
     <div className="layout-background">
       <AnimatedCursor {...cursorConfig} />
-
-      <AppBar position="fixed" color="primary">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My Website
-          </Typography>
-          <Button color="inherit" href="#home">Home</Button>
-          <Button color="inherit" href="#about">About</Button>
-          <Button color="inherit" href="#services">Services</Button>
-          <Button color="inherit" href="#contact">Contact</Button>
-        </Toolbar>
-      </AppBar>
-
-      <Toolbar /> {/* This is to ensure content is not hidden behind the AppBar */}
 
       <video className="background-video" autoPlay muted loop playsInline>
         <source src={styling.background} type="video/mp4"/>
