@@ -30,18 +30,6 @@ function Education() {
     navigate('/');
   };
 
-  function preloadImage(src) {
-    const img = new Image();
-    img.src = src;
-  }
-
-  useEffect(() => {
-        // Preload images for each project
-        projects.forEach(project => {
-          preloadImage(project.image);
-        });
-    }, []);
-
   return (
     <div className="education-page">
       {/* Back Button */}

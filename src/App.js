@@ -9,7 +9,19 @@ import Projects from './pages/Projects/Projects';
 function App() {
   const [loaded, setLoaded] = useState(false);
 
+  function preloadImagesFromDirectory(directory) {
+      const images = directory.keys().map(directory);
+      images.forEach((imageSrc) => {
+        const img = new Image();
+        img.src = imageSrc;
+      });
+  }
+
   useEffect(() => {
+    // Dynamically load all images in 'assets/images' directory
+    const imagesDirectory = require.context('./assets/images', false, /\.(png|jpe?g|svg)$/);
+    preloadImagesFromDirectory(imagesDirectory);
+
     // Check if the page has been loaded before
     const pageLoadedBefore = localStorage.getItem('pageLoaded');
     if (pageLoadedBefore) {
