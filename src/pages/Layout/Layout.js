@@ -31,7 +31,7 @@ function Layout({ children }) {
 
   useEffect(() => {
     // Preload images
-    const imagesDirectory = require.context('./assets/images', false, /\.(png|jpe?g|svg)$/);
+    const imagesDirectory = require.context('../../assets/images', false, /\.(png|jpe?g|svg)$/);
     preloadImagesFromDirectory(imagesDirectory);
 
     // Preload background video
