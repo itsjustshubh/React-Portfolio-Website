@@ -1,0 +1,286 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation Link Styles */
+.vertical-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  left: 3%;
+  z-index: 1;
+  color: white;
+  line-height: 5vh;
+  font-weight: bold;
+  font-size: 3.5vh;
+  font-family: Helvetica, sans-serif;
+  text-align: left;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1em; /* Relative font size */
+}
+
+.nav-link:hover {
+  color: dimgrey;
+  text-decoration: none;
+}
+
+/* Loading Animation Styles */
+.loading-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.loader {
+  font-size: 4vh; /* Responsive font size */
+  text-align: center;
+  color: white;
+  font-family: 'Questrial', sans-serif;
+}
+
+.name, .portfolio {
+  font-weight: 700;
+  display: inline;
+  animation: fadeOut 1s ease forwards;
+}
+
+.name {
+  animation-delay: 1s;
+}
+
+.portfolio {
+  animation-delay: 2s;
+}
+
+/* Center Text Styles */
+/* Center Text Styles */
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 20%;
+}
+
+.me-text, .read-more-text {
+  font-size: 2.3vh; /* Responsive font size */
+  color: white;
+  font-weight: bold;
+  font-family: 'Questrial', sans-serif;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.title {
+  position: absolute;
+  top: 9%;
+  left: 3%;
+  zIndex: 1;
+  color: white;
+  font-size: 6vh;
+  font-weight: bold;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.subtitle {
+  position: absolute;
+  top: 13%;
+  left: 3.1%;
+  z-index: 1;
+  color: white;
+  font-size: 3.5vh;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.websitePurpose {
+  position: absolute;
+  font-size: 3vh;
+  top: 11%;
+  right: 8%;
+  zIndex: 1;
+  color: white;
+  font-weight: bold;
+  font-family: 'Questrial', sans-serif;
+}
+
+.language {
+  position: absolute;
+  font-size: 3vh;
+  bottom: 10%;
+  left: 3%;
+  zIndex: 1;
+  color: white;
+  font-weight: bold;
+  font-family: 'Questrial', sans-serif;
+}
+
+.languages {
+  position: absolute;
+  bottom: 3%;
+  left: 3%;
+  z-index: 1;
+  color: white;
+  font-size: 3vh;
+  font-family: 'Questrial', sans-serif;
+}
+
+.description {
+  white-space: pre-line;
+  position: absolute;
+  bottom: 6%;
+  right: 6%;
+  zIndex: 1;
+  color: white;
+  font-size: 2.3vh;
+  line-height: 1.5;
+  font-family: 'Questrial', sans-serif;
+  font-weight: bold;
+  max-width: 26vh;
+  text-align: left;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.read-more-text {
+  opacity: 0;
+  position: absolute;
+}
+
+.text-container:hover .read-more-text {
+  opacity: 1;
+}
+
+.read-more-text:hover {
+  text-decoration: underline;
+}
+
+/* Image Styles */
+.main-image-one,
+.main-image-two,
+.main-image-three {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 36vh; /* Auto-adjust width to maintain aspect ratio */
+  height: 36vh; /* Auto-adjust height to maintain aspect ratio */
+}
+
+.main-image-one {
+  top: 50%;
+  left: 33%;
+}
+
+.main-image-two {
+  top: 28%;
+  left: 67%;
+}
+
+.main-image-three {
+  top: 73%;
+  left: 67%;
+}
+
+/* Responsive text size */
+@media (max-width: 768px) {
+  .vertical-menu {
+    top: 15%;
+    left: 3%;
+    line-height: 5vh;
+    font-size: 4.5vw; /* Larger font for smaller screens */
+  }
+
+  .title {
+    top: 4%;
+    left: 3%;
+    font-size: 4vh; /* Larger font for smaller screens */
+  }
+
+  .subtitle {
+    top: 7.5%;
+    left: 3%;
+    font-size: 2vh; /* Larger font for smaller screens */
+  }
+
+  .me-text, .read-more-text {
+    font-size: 3vh; /* Larger font for smaller screens */
+    display: none;
+  }
+
+  .websitePurpose {
+    display: none;
+  }
+
+  .description {
+    bottom: 3%;
+    right: 6%;
+    font-size: 2vh; /* Larger font for smaller screens */
+    max-width: 20vh;
+  }
+
+  .language {
+    bottom: 6%;
+    right: 6%;
+    font-size: 2vh;
+  }
+
+  .languages {
+    bottom: 1.5%;
+    right: 6%;
+    font-size: 2vh;
+  }
+
+  .main-image-one,
+  .main-image-two,
+  .main-image-three {
+    max-width: 50vw;
+    max-height: 50vh;
+  }
+
+  #cursor, #follower {
+    display: none;
+  }
+}

@@ -1,0 +1,198 @@
+.projects-page {
+    overflow-y: auto;
+    height: 100%;
+    color: white;
+    padding: 2vh;
+    text-align: center;
+}
+
+.header-container {
+    margin-bottom: 3vh;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
+}
+
+.ac_btn_edith {
+    padding: 0.9vh 2.2vh;
+    background-color: #0077cc;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5vh;
+    border: none;
+    cursor: pointer;
+    border-radius: 2vh;
+    margin: 0 1vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.ac_btn_edith:hover {
+    background-color: #005fa3;
+    color: #ffffff;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows wrapping if the screen is too small */
+}
+
+/* Form field styles */
+.form-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.form-field label {
+    flex-basis: 40%; /* Adjust based on your preference */
+    text-align: left;
+    margin-right: 2vh; /* Space between label and input */
+}
+
+.form-field input,
+.form-field select {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Ensure input takes the remaining space */
+}
+
+.physiological-data-collection,
+.physiological-data-input {
+    background-color: #ffffff;
+    padding: 2vh;
+    border-radius: 4vh;
+    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.2);
+    margin: 1vh;
+    flex: 1 1 45%; /* Each form takes roughly half the container width */
+    max-width: calc(50% - 4vh); /* Adjusts the maximum width */
+    /*max-width: 500px; !* Adjust based on your preference *!*/
+}
+
+.physiological-data-collection h2,
+.physiological-data-input h2 {
+    color: #333333;
+    margin-bottom: 2vh;
+}
+
+.physiological-data-input table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.physiological-data-input th,
+.physiological-data-input td {
+    border: 1px solid #ddd;
+    color: black;
+    font-weight: bold;
+    padding: 8px;
+    text-align: left;
+}
+
+.physiological-data-input th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.physiological-data-input tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.physiological-data-input tr:hover {
+    background-color: #f1f1f1;
+}
+
+.submit-table-data {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    display: block; /* Center the button */
+    margin: 0 auto;
+}
+
+.submit-table-data:hover {
+    background-color: #45a049;
+}
+
+label {
+    display: block;
+    margin-bottom: 1vh;
+    color: #333333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 1vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.results-container {
+    background-color: #ffffff;
+    padding: 2vh;
+    border-radius: 4vh;
+    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.2);
+    margin: 1vh;
+}
+
+.results-container h2 {
+    color: #333333;
+    margin-bottom: 2vh;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #0077cc;
+    color: white;
+}
+
+.delete-row {
+    color: black; /* Change from red to black */
+    cursor: pointer;
+    text-align: center;
+}
+
+.delete-row:hover {
+    opacity: 0.8; /* Adjust hover effect as needed */
+}

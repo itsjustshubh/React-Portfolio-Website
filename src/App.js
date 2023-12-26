@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Layout from "./pages/Layout/Layout";
+import Home from './pages/Home/Home';
+import Contact from './pages/Contact/Contact';
+import Education from './pages/Education/Education';
+import Projects from './pages/Projects/Projects';
+import Edith from "./pages/Projects/pages/Edith/Edith";
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    // Check if the page has been loaded before
+    const pageLoadedBefore = localStorage.getItem('pageLoaded');
+    if (pageLoadedBefore) {
+      setLoaded(true);
+    } else {
+      localStorage.setItem('pageLoaded', 'true');
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <Layout>
+      <Routes>
+          <Route path="/" element={<Home loaded={!loaded} />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/edith" element={<Edith />} />
+          {/* Add other routes here */}
+        </Routes>
+    </Layout>
+  </Router>
   );
 }
 
