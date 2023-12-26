@@ -6,6 +6,7 @@ import { education } from '../Content'; // Importing education data
 function Education() {
   const [selectedEducation, setSelectedEducation] = useState(0); // State to track the selected education item
   const navigate = useNavigate(); // Hook for programmatic navigation
+  const [hoveredButton, setHoveredButton] = useState(null); // State to track the hovered education item
 
   // Function to get the specific color for each education item
   const getEducationColor = (index) => {
