@@ -5,7 +5,6 @@ import Home from './pages/Home/Home';
 import Contact from './pages/Contact/Contact';
 import Education from './pages/Education/Education';
 import Projects from './pages/Projects/Projects';
-import Edith from "./pages/Projects/pages/Edith/Edith";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -28,7 +27,6 @@ function App() {
           <Route path="/education" element={<Education />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/edith" element={<Edith />} />
           {/* Add other routes here */}
         </Routes>
     </Layout>
