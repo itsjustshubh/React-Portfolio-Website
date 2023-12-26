@@ -9,9 +9,11 @@ import imagesLoaded from 'imagesloaded';
 function Projects() {
     const navigate = useNavigate();
 
-    const isSvgImage = (image) => {
-        return typeof image === 'string' && image.endsWith('.svg');
+    const isSvgIcon = (icon) => {
+        // Check if the icon is not a FontAwesome object
+        return !(icon && icon.prefix && icon.iconName);
     };
+
 
     const handleBackClick = () => {
         navigate('/');
@@ -35,6 +37,14 @@ function Projects() {
         });
     }, []);
 
+    const renderIcon = (icon) => {
+        return isSvgIcon(icon) ? (
+            <img src={icon} className="icon" alt="Icon" />
+        ) : (
+            <FontAwesomeIcon icon={icon} />
+        );
+    };
+
     const renderButton = (button, key) => {
         return (
             <div className="ac_btn" key={key}
@@ -52,7 +62,7 @@ function Projects() {
                      e.currentTarget.style.color = button.buttonTextColor || 'navajowhite';
                  }}>
                 <a href={button.buttonLink} style={{color: 'inherit'}}>
-                    {button.buttonIcon && <FontAwesomeIcon icon={button.buttonIcon}/>}
+                    {button.buttonIcon && renderIcon(button.buttonIcon)}
                     {button.buttonText}
                 </a>
             </div>
@@ -80,11 +90,13 @@ function Projects() {
                          style={{backgroundColor: project.backgroundColor, color: project.textColor}}>
                         <div className="project-top">
                             <div className="project-image-container">
-                                {isSvgImage(project.image) ?
-                                    <img src={project.image} className="project-image" alt={project.name}/> :
+                                {isSvgIcon(project.image) ? (
+                                    <img src={project.image} className="project-image" alt={project.name}/>
+                                ) : (
                                     <FontAwesomeIcon icon={project.image} size="6x" className="project-image"/>
-                                }
+                                )}
                             </div>
+
                             <div className="project-header">
                                 <h2 className="project-title">{project.name}</h2>
                                 <p className="project-timeline">{project.timeline}</p>

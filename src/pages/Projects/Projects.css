@@ -86,6 +86,9 @@
 }
 
 .ac_btn {
+    display: flex;            /* Use Flexbox */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
     padding: 0.9vh 2.2vh;
     background-color: rgba(255, 255, 255, 4%);
     font-weight: bold;
@@ -99,6 +102,12 @@
     transition: color 0.6s cubic-bezier(0.55, 0, 0.1, 1),
                 border-color 0.6s cubic-bezier(0.55, 0, 0.1, 1),
                 box-shadow 0.7s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.ac_btn .icon, .ac_btn svg {
+    height: 3.8vh; /* Adjust based on your design */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 0.7vh; /* Space between icon and text */
 }
 
 .ac_btn:hover {
@@ -116,6 +125,9 @@
 }
 
 .ac_btn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     /*color: navajowhite; !* Default text color *!*/
     transition: color 0.3s ease; /* Smooth transition for text color */

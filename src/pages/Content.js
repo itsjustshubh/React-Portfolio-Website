@@ -14,6 +14,7 @@ import { backgroundVideo,
     devpost,
     instagram,
     awtl,
+    northeastern,
 } from './Assets';
 
 import {
@@ -372,7 +373,7 @@ const projects = [
                 buttonLink: "/projects/edith",
             },
             {
-                buttonIcon: faNewspaper,
+                buttonIcon: awtl,
                 buttonText: "Read The Khoury Article",
                 buttonLink: "https://www.khoury.northeastern.edu/meet-edith-the-ai-powered-schedule-assistant-designed-to-reduce-your-stress/",
             },
