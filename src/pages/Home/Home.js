@@ -15,8 +15,19 @@ function Home({loaded}) {
   const [showImage, setShowImage] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Preload images
+  function preloadImage(src) {
+    const img = new Image();
+    img.src = src;
+  }
+
   // Effects for loading and cursor movement
   useEffect(() => {
+    // Preload images
+    preloadImage(imageOne);
+    preloadImage(imageTwo);
+    preloadImage(imageThree);
+
     if (!loaded) {
       // Show loading screen only if not loaded before
       const timer = setTimeout(() => {

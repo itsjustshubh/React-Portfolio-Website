@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom'; // Allows navigation between routes
 import './Education.css'; // Importing CSS for styling
-import { education } from '../Content'; // Importing education data
+import {education, projects} from '../Content';
+import Masonry from "masonry-layout";
+import imagesLoaded from "imagesloaded"; // Importing education data
 
 function Education() {
   const [selectedEducation, setSelectedEducation] = useState(0); // State to track the selected education item
@@ -27,6 +29,18 @@ function Education() {
   const handleBackClick = () => {
     navigate('/');
   };
+
+  function preloadImage(src) {
+    const img = new Image();
+    img.src = src;
+  }
+
+  useEffect(() => {
+        // Preload images for each project
+        projects.forEach(project => {
+          preloadImage(project.image);
+        });
+    }, []);
 
   return (
     <div className="education-page">

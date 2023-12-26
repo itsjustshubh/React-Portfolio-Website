@@ -23,7 +23,17 @@ function Projects() {
         ));
     };
 
+    function preloadImage(src) {
+        const img = new Image();
+        img.src = src;
+    }
+
     useEffect(() => {
+        // Preload images for each project
+        projects.forEach(project => {
+          preloadImage(project.image);
+        });
+
         const msnry = new Masonry('.projects-container', {
             itemSelector: '.project-card',
             columnWidth: '.project-card',
