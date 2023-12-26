@@ -16,6 +16,9 @@ export { default as ryanInternationalSchoolLogo } from '../assets/images/educati
 export { default as devpost } from '../assets/icons/devpost.svg';
 export { default as instagram } from '../assets/icons/instagram.svg';
 export { default as awtl } from '../assets/icons/awtl.svg';
+export { default as edith } from '../assets/icons/edith.svg';
+export { default as socialCloud } from '../assets/icons/social-cloud.svg';
 export { default as northeastern } from '../assets/icons/northeastern.svg';
+export { default as husky } from '../assets/icons/northeastern-husky.svg';
 
 // Add any other asset exports below...

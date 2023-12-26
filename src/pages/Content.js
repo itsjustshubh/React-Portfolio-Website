@@ -14,18 +14,31 @@ import { backgroundVideo,
     devpost,
     instagram,
     awtl,
+    edith,
+    socialCloud,
+    husky,
     northeastern,
 } from './Assets';
 
 import {
     // Some Built in Icons
-    faAirbnb, faApple, faAws, faCcVisa, faChrome, faGithub, faLinkedin, faMedium, faYoutube
+    faAirbnb,
+    faApple,
+    faArtstation,
+    faAws,
+    faCcVisa,
+    faChrome,
+    faGithub, faGoogleDrive,
+    faLinkedin,
+    faMedium,
+    faResearchgate,
+    faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 
 import {
     faCode,
     // Some Built in Icons
-    faFileText, faNewspaper
+    faFileText, faNewspaper, faPaintbrush
 } from "@fortawesome/free-solid-svg-icons";
 
 // Content Configuration
@@ -291,12 +304,10 @@ const socialprofils = [
 
 const projects = [
     {
-        id: 1,
-        hours: "900",
+        hours: "1",
         name: "A Will To Live (AWTL)",
         backgroundColor: "rgb(0,62,84,50%)",
         image: awtl,
-        link: "https://www.github.com/itsjustshubh",
         timeline: "Oct 2020 - Dec 2021",
         description: "AWTL, a project close to my heart, focuses on aiding individuals battling mental health challenges. The initiative provides resources and support, fostering a community where everyone feels empowered to seek the help they need. My role as President of Technology and Logistics involved spearheading the website development, strategizing marketing approaches, and partnering with social influencers to promote wellness.",
 
@@ -314,11 +325,10 @@ const projects = [
         ],
     },
     {
-        hours: "14",
+        hours: "1",
         name: "Social Cloud",
-        backgroundColor: "rgb(0,123,255,50%)",
-        image: faCcVisa,
-        link: "https://www.github.com/itsjustshubh/socialcloud",
+        backgroundColor: "rgb(0,123,255,30%)",
+        image: socialCloud,
         timeline: "Aug 2020 - Dec 2021",
         description: "Social Cloud is an innovative platform where business ideas meet big data for a noble cause – supporting NGOs and Charities. I was part of an enthusiastic student team that built this unique agency, specializing in customized social marketing. Our efforts aimed to harness the power of digital platforms to create positive global impact.",
 
@@ -336,11 +346,10 @@ const projects = [
         ]
     },
     {
-        hours: "15",
+        hours: "1",
         name: "Graphic Design",
         backgroundColor: "rgb(255,165,0,50%)",
-        image: faAirbnb,
-        link: "https://www.github.com/itsjustshubh/socialcloud",
+        image: faPaintbrush,
         timeline: "Feb 2020 - Present",
         description: "My journey in Graphic Design began with a keen interest in video production and typography. I focus on creating instructional tech videos, aiming to bridge the technology gap for seniors. My work, which began with assisting the older generation in technology adoption, has now expanded to collaborating on diverse multimedia projects.",
 
@@ -358,24 +367,33 @@ const projects = [
         ]
     },
     {
-        hours: "20",
-        name: "Edith (The Next-Gen Calendar App)",
+        hours: "50",
+        name: "Edith (An AI Calendar App)",
         backgroundColor: "rgb(256,256,256,25%)",
-        image: faAws,
-        link: "https://www.github.com/itsjustshubh/socialcloud",
+        image: edith,
         timeline: "Oct 2023 - Present",
         description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
 
         buttons: [
             {
-                buttonIcon: faCode,
-                buttonText: "Try It Out!",
-                buttonLink: "/projects/edith",
+                buttonIcon: faGithub,
+                buttonText: "Repository",
+                buttonLink: "https://github.com/itsjustshubh/Emotion_Analysis_AI-Phase_One",
             },
             {
-                buttonIcon: awtl,
-                buttonText: "Read The Khoury Article",
+                buttonIcon: faNewspaper,
+                buttonText: "Khoury Article",
                 buttonLink: "https://www.khoury.northeastern.edu/meet-edith-the-ai-powered-schedule-assistant-designed-to-reduce-your-stress/",
+            },
+            {
+                buttonIcon: faCode,
+                buttonText: "Prototype",
+                buttonLink: "https://drive.google.com/file/d/1itFukhWEn5DTPpNbw-OLsEtJN5uTv1HJ/view",
+            },
+            {
+                buttonIcon: faGoogleDrive,
+                buttonText: "Research Paper",
+                buttonLink: "https://drive.google.com/file/d/1itFukhWEn5DTPpNbw-OLsEtJN5uTv1HJ/view",
             },
         ]
     },

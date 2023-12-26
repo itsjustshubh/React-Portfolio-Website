@@ -42,12 +42,11 @@
 }
 
 .project-image, .project-image-container img {
-    height: 19vh;
+    height: 17vh;
     width: auto;
     object-fit: cover;
     padding-left: 2vh;
     padding-right: 1vh;
-    border-radius: 1vh;
 }
 
 .project-header {
@@ -57,7 +56,7 @@
 
 .project-title {
     text-align: start;
-    font-size: 3.5vh;
+    font-size: 5vh;
     font-weight: bold;
     margin: 0;
 }
@@ -66,7 +65,7 @@
     text-align: start;
     font-weight: bold;
     font-size: 3vh;
-    margin-top: 0.5vh;
+    margin-top: 1.2vh;
 }
 
 .project-description {
@@ -78,30 +77,39 @@
 }
 
 .project-button-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    justify-content: center; /* Center the grid items */
     align-items: center;
-    width: 100%;
-    margin-top: 2vh;
+    width: 90%;
+    margin: 2vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
 }
 
 .ac_btn {
-    display: flex;            /* Use Flexbox */
-    justify-content: center;  /* Center horizontally */
-    align-items: center;      /* Center vertically */
-    padding: 0.9vh 2.2vh;
+    width: auto; /* Width determined by content */
+
     background-color: rgba(255, 255, 255, 4%);
     font-weight: bold;
-    font-size: 2.2vh;
+    font-size: 2.4vh;
     border: white 0.3vh solid;
     cursor: pointer;
     border-radius: 2vh;
-    margin-left: 3vh;
-    margin-right: 3vh;
+    margin: 1.5vh; /* Adjust margins for spacing */
     text-decoration: none;
     transition: color 0.6s cubic-bezier(0.55, 0, 0.1, 1),
                 border-color 0.6s cubic-bezier(0.55, 0, 0.1, 1),
                 box-shadow 0.7s cubic-bezier(0.55, 0, 0.1, 1);
+
+    white-space: normal; /* Allow text to wrap */
+    text-align: center; /* Center-align the text */
+    padding: 1.2vh 1.6vh; /* Adjust padding as necessary */
+    height: auto; /* Allow button height to expand */
+    align-items: center; /* Center content vertically */
+
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    justify-content: flex-start; /* Align buttons to the start */
 }
 
 .ac_btn .icon, .ac_btn svg {

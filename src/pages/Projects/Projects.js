@@ -26,6 +26,7 @@ function Projects() {
     };
 
     useEffect(() => {
+    // Masonry setup for project cards
         const msnry = new Masonry('.projects-container', {
             itemSelector: '.project-card',
             columnWidth: '.project-card',
@@ -34,6 +35,18 @@ function Projects() {
 
         imagesLoaded('.projects-container', () => {
             msnry.layout();
+        });
+
+        // Masonry setup for each button container
+        document.querySelectorAll('.project-button-container').forEach(container => {
+            const buttonMsnry = new Masonry(container, {
+                itemSelector: '.ac_btn',
+                columnWidth: 1 // Assuming the width of each button is the same
+            });
+
+            imagesLoaded(container, () => {
+                buttonMsnry.layout();
+            });
         });
     }, []);
 
