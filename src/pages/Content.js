@@ -22,23 +22,60 @@ import { backgroundVideo,
 
 import {
     // Some Built in Icons
-    faAirbnb,
     faApple,
-    faArtstation,
+    faPython,
+    faJava,
+    faReact,
+    faJs,
+    faNode,
+    faHtml5,
     faAws,
+    faGithub,
+    faMedium,
+    faYoutube,
+    faGoogleDrive,
+    faAirbnb,
+    faArtstation,
     faCcVisa,
     faChrome,
-    faGithub, faGoogleDrive,
     faLinkedin,
-    faMedium,
     faResearchgate,
-    faYoutube
+    faVuejs,
+    faPhp,
+    faAngular,
+    faCss3,
+    faSass,
+    faLess,
+    faWordpress,
+    faGit,
+    faGitlab,
+    faNpm,
+    faYarn,
+    faDocker,
+    faGulp,
+    faGrunt,
+    faSymfony,
+    faLaravel,
+    faYii,
+    faAdobePhoneGap,
+    faAppStoreIos,
+    faBitbucket,
+    faBootstrap,
+    faBuffer,
+    faDigitalOcean,
+    faDiscord,
+    faEmber,
+    faJquery,
+    faJira,
+    faMarkdown,
+    faRaspberryPi
+    // Import additional icons as needed
 } from "@fortawesome/free-brands-svg-icons";
 
 import {
     faCode,
     // Some Built in Icons
-    faFileText, faNewspaper, faPaintbrush
+    faFileText, faNewspaper, faPaintbrush, faArrowCircleLeft
 } from "@fortawesome/free-solid-svg-icons";
 
 // Content Configuration
@@ -81,8 +118,44 @@ const data = {
 };
 
 const skills = [
-    "Python", "Java", "C++", "JavaScript", "HTML", "CSS", "SQL", "React", "Node.js", "Express.js", "MongoDB", "Git",
-    "GitHub", "Heroku",]
+    {
+        hours: 1,
+        name: "Python",
+        icon: faPython,
+    },
+    {
+        hours: 1,
+        name: "Java",
+        icon: faJava,
+    },
+    {
+        hours: 1,
+        name: "JavaScript",
+        icon: faJs,
+    },
+    // ... Add other skills here
+    {
+        hours: 1,
+        name: "React",
+        icon: faReact,
+    },
+    {
+        hours: 1,
+        name: "Node.js",
+        icon: faNode,
+    },
+    {
+        hours: 1,
+        name: "HTML5",
+        icon: faHtml5,
+    },
+    {
+        hours: 1,
+        name: "AWS",
+        icon: faAws,
+    },
+    // ... Continue adding other skills
+];
 
 const education = [
   {
@@ -145,111 +218,6 @@ const education = [
   },
   // Add more entries below
 ];
-
-const worktimeline = [{
-        jobtitle: "Designer of week",
-        where: "YAdfi",
-        date: "2020",
-    },
-    {
-        jobtitle: "Designer of week",
-        where: "Jamalya",
-        date: "2019",
-    },
-    {
-        jobtitle: "Designer of week",
-        where: "ALquds",
-        date: "2019",
-    },
-];
-
-const services = [{
-        title: "UI & UX Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-    {
-        title: "Mobile Apps",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-    {
-        title: "Wordpress Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-];
-
-const dataportfolio = [{
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/800/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/550/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-];
-
-const contactConfig = {
-    YOUR_EMAIL: "name@domain.com",
-    YOUR_FONE: "(555)123-4567",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula eu nunc et sollicitudin. Cras pulvinar, nisi at imperdiet pharetra. ",
-    // creat an emailjs.com account 
-    // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
-    YOUR_SERVICE_ID: "service_id",
-    YOUR_TEMPLATE_ID: "template_id",
-    YOUR_USER_ID: "user_id",
-};
 
 const socialprofils = [
     {
@@ -397,21 +365,148 @@ const projects = [
             },
         ]
     },
+    {
+        hours: "50",
+        name: "Edith (An AI Calendar App)",
+        backgroundColor: "rgb(256,256,256,25%)",
+        image: edith,
+        timeline: "Oct 2023 - Present",
+        description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
+    },
+    {
+        hours: "50",
+        name: "Edith (An AI Calendar App)",
+        backgroundColor: "rgb(256,256,256,25%)",
+        image: edith,
+        timeline: "Oct 2023 - Present",
+        description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
+    },
+    {
+        hours: "50",
+        name: "Edith (An AI Calendar App)",
+        backgroundColor: "rgb(256,256,256,25%)",
+        image: edith,
+        timeline: "Oct 2023 - Present",
+        description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
+    },
+    {
+        hours: "50",
+        name: "Edith (An AI Calendar App)",
+        backgroundColor: "rgb(256,256,256,25%)",
+        image: edith,
+        timeline: "Oct 2023 - Present",
+        description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
+    },
+    {
+        hours: "50",
+        name: "Edith (An AI Calendar App)",
+        backgroundColor: "rgb(256,256,256,25%)",
+        image: edith,
+        timeline: "Oct 2023 - Present",
+        description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
+    },
+    {
+        hours: "50",
+        name: "Edith (An AI Calendar App)",
+        backgroundColor: "rgb(256,256,256,25%)",
+        image: edith,
+        timeline: "Oct 2023 - Present",
+        description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
+    },
+    {
+        hours: "50",
+        name: "Edith (An AI Calendar App)",
+        backgroundColor: "rgb(256,256,256,25%)",
+        image: edith,
+        timeline: "Oct 2023 - Present",
+        description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
+    },
+    {
+        hours: "50",
+        name: "Edith (An AI Calendar App)",
+        backgroundColor: "rgb(256,256,256,25%)",
+        image: edith,
+        timeline: "Oct 2023 - Present",
+        description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
+    },
+    {
+        hours: "50",
+        name: "Edith (An AI Calendar App)",
+        backgroundColor: "rgb(256,256,256,25%)",
+        image: edith,
+        timeline: "Oct 2023 - Present",
+        description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
+    },
+
     // Add more projects below...
 ];
 
+const errorPage = {
+        title: "404",
+        subtitle: "This page does not exist. Reevaluate your URL in order to find what you're searching.",
+        button: {
+            icon: faArrowCircleLeft,
+            text: "Return Home",
+            link: "/",
+
+            // Colors
+            textColor: "ghostwhite",
+            textBackgroundColor: "rgb(255, 255, 255, 20%)",
+
+            // Colors On Hover
+            textColor: "black", // changes the box shadow
+            textBackgroundColor: "rgb(255, 255, 255, 20%)",
+        },
+
+        quotes: [
+        {
+            text: "Coding is one of the only forms of art, where the creation of the artist, the code, is never really seen by the public but rather only its representation. To truly understand the elegance of this art, view the code, the real art.",
+            writer: "Shubh Thorat",
+        },
+        {
+            text: "Technology is best when it brings people together.",
+            writer: "Matt Mullenweg",
+        },
+        {
+            text: "It's not a faith in technology. It's faith in people.",
+            writer: "Steve Jobs",
+        },
+        {
+            text: "The science of today is the technology of tomorrow.",
+            writer: "Edward Teller",
+        },
+        {
+            text: "Innovation distinguishes between a leader and a follower.",
+            writer: "Steve Jobs",
+        },
+        {
+            text: "The best way to predict the future is to invent it.",
+            writer: "Alan Kay",
+        },
+        {
+            text: "Any sufficiently advanced technology is equivalent to magic.",
+            writer: "Arthur C. Clarke",
+        },
+        {
+            text: "The only way to do great work is to love what you do.",
+            writer: "Steve Jobs",
+        },
+        {
+            text: "The purpose of software engineering is to control complexity, not to create it.",
+            writer: "Pamela Zave",
+        }
+    ]
+};
+
 // Exporting all configurations
 export {
+    logotext,
     meta,
     styling,
-    dataportfolio,
-    worktimeline,
-    services,
+    data,
     skills,
     education,
-    projects,
-    data,
-    contactConfig,
     socialprofils,
-    logotext,
+    projects,
+    errorPage,
 };

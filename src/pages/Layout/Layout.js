@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
 import AnimatedCursor from 'react-animated-cursor';
 import { styling } from "../Content";
+import { NavLink } from 'react-router-dom';
 import './Layout.css';
 
-function Layout({ children }) {
+function Layout({ children, loading }) {
   const cursorConfig = {
       innerSize: 0.015 * window.innerHeight, // Size of the inner cursor circle
       outerSize: 0.04 * window.innerHeight, // Size of the outer cursor circle
@@ -38,16 +39,40 @@ function Layout({ children }) {
     preloadVideo(styling.background);
   }, []);
 
+
+
   return (
     <div className="layout-background">
       <AnimatedCursor {...cursorConfig} />
-
       <video className="background-video" autoPlay muted loop playsInline>
         <source src={styling.background} type="video/mp4"/>
       </video>
+
+      {!loading && ( // Conditionally render the navbar based on the loading state
+        <div className="navbar">
+            <ul>
+              <li><NavLink to="/" className="nav-link">Home</NavLink></li>
+              <li><NavLink to="/education" className="nav-link">Education</NavLink></li>
+              <li><NavLink to="/projects" className="nav-link">Projects</NavLink></li>
+              <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
+              {/* Add other navigation links as needed */}
+            </ul>
+        </div>
+      )}
+
       {children}
     </div>
   );
 }
+
+document.querySelectorAll('.navbar ul li a').forEach(item => {
+  item.addEventListener('mouseover', () => {
+    item.style.transition = 'all 0.8s ease-in';
+  });
+
+  item.addEventListener('mouseout', () => {
+    item.style.transition = 'all 0.5s ease-out';
+  });
+});
 
 export default Layout;
