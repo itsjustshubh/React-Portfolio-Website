@@ -437,7 +437,6 @@ const projects = [
         timeline: "Oct 2023 - Present",
         description: "Edith redefines planning in the digital age, seamlessly integrating life's many facets into a single, intuitive planner. More than just a scheduling tool, Edith offers academic planning, mood-based music suggestions, astrological insights, and activity planning based on weather forecasts. This project, developed using agile methodologies and diverse APIs, stands out by prioritizing holistic well-being in daily organization.",
     },
-
     // Add more projects below...
 ];
 

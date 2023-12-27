@@ -1,18 +1,40 @@
-import React, {useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import AnimatedCursor from 'react-animated-cursor';
-import { styling } from "../Content";
 import { NavLink } from 'react-router-dom';
+import { styling } from "../Content"; // Ensure this path is correct
 import './Layout.css';
 
-function Layout({ children, loading }) {
+function Layout({ children }) {
   const cursorConfig = {
-      innerSize: 0.015 * window.innerHeight, // Size of the inner cursor circle
-      outerSize: 0.04 * window.innerHeight, // Size of the outer cursor circle
-      color: '256, 256, 256', // RGB equivalent of orangered
-      outerAlpha: 0.4, // Transparency of the outer cursor circle
-      innerScale: 0.5, // Scale of the inner cursor circle on hover
-      outerScale: 2, // Scale of the outer cursor circle on hover
+      innerSize: 0.015 * window.innerHeight,
+      outerSize: 0.04 * window.innerHeight,
+      color: '256, 256, 256',
+      outerAlpha: 0.4,
+      innerScale: 0.5,
+      outerScale: 2,
   };
+
+  const [showNavbar, setShowNavbar] = useState(true);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+        if (window.scrollY > 250) {
+            setShowNavbar(false);
+        } else {
+            setShowNavbar(true);
+        }
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+
+    // Debugging state change
+    console.log('Navbar Visible:', showNavbar);
+
+    return () => {
+        window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [showNavbar]);
+
 
   function preloadImagesFromDirectory(directory) {
       const images = directory.keys().map(directory);
@@ -39,8 +61,6 @@ function Layout({ children, loading }) {
     preloadVideo(styling.background);
   }, []);
 
-
-
   return (
     <div className="layout-background">
       <AnimatedCursor {...cursorConfig} />
@@ -48,31 +68,18 @@ function Layout({ children, loading }) {
         <source src={styling.background} type="video/mp4"/>
       </video>
 
-      {!loading && ( // Conditionally render the navbar based on the loading state
-        <div className="navbar">
+        <div className={`navbar ${!showNavbar ? 'navbar-hidden' : ''}`}>
             <ul>
-              <li><NavLink to="/" className="nav-link">Home</NavLink></li>
-              <li><NavLink to="/education" className="nav-link">Education</NavLink></li>
-              <li><NavLink to="/projects" className="nav-link">Projects</NavLink></li>
-              <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
-              {/* Add other navigation links as needed */}
+                <li><NavLink to="/" className="nav-link">Home</NavLink></li>
+                <li><NavLink to="/education" className="nav-link">Education</NavLink></li>
+                <li><NavLink to="/projects" className="nav-link">Projects</NavLink></li>
+                <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
             </ul>
         </div>
-      )}
 
-      {children}
+        {children}
     </div>
   );
 }
-
-document.querySelectorAll('.navbar ul li a').forEach(item => {
-  item.addEventListener('mouseover', () => {
-    item.style.transition = 'all 0.8s ease-in';
-  });
-
-  item.addEventListener('mouseout', () => {
-    item.style.transition = 'all 0.5s ease-out';
-  });
-});
 
 export default Layout;

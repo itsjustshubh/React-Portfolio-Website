@@ -30,14 +30,10 @@
   padding: 0; /* Padding for top and bottom */
   font-weight: bold;
   font-size: 2vh;
-  transition: top 0.3s, all 0.5s ease; /* Smooth transition effect */
+  transition: all 0.5s ease; /* Smooth transition effect */
   z-index: 1;
 }
 
-.navbar-hidden {
-  top: -100%; /* This will push the navbar off-screen */
-  transition: top 0.3s; /* Smooth transition */
-}
 
 .navbar ul {
   list-style-type: none;
