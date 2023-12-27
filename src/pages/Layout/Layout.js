@@ -46,7 +46,7 @@ function Layout({ children }) {
         <source src={styling.background} type="video/mp4"/>
       </video>
 
-        <div className={`navbar ${!showNavbar ? 'navbar-hidden' : ''}`}>
+        <div className="navbar">
             <ul>
                 <li><NavLink to="/" className="nav-link">Home</NavLink></li>
                 <li><NavLink to="/education" className="nav-link">Education</NavLink></li>
