@@ -1,0 +1,64 @@
+.contact-page {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  min-height: 80vh;
+  padding: 3vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  background-color: rgba(255, 255, 255, 2%); /* Adjusted for better visibility */
+  padding: 2.5vh;
+  border-radius: 4vh;
+  max-width: 100%;
+  height: 60vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the items vertically */
+}
+
+.contact-header {
+  color: white;
+  margin-bottom: 3vh; /* Add space below the header */
+  font-size: 4vh;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 3vh;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3vh;
+    color: white;
+    padding: 1vh 1vh;
+    border-radius: 2vh;
+    font-size: 6vh; /* Adjusted for better readability */
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+}
+
+.social-link:hover {
+    opacity: 0.8;
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.icon {
+    height: 6vh; /* Adjust the size as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 10px;
+}
