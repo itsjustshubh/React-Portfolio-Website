@@ -8,7 +8,7 @@ import imageTwo from '../../assets/images/home/image-two.png';
 import imageThree from '../../assets/images/home/image-three.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Home({loaded}) {
+function Home() {
   // State declarations
   const [loading, setLoading] = useState(loaded);
   const [slideLoading, setSlideLoading] = useState(false);

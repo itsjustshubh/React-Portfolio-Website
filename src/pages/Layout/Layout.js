@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { styling } from "../Content"; // Ensure this path is correct
 import './Layout.css';
 
-function Layout({ children }) {
+function Layout(children) {
   const cursorConfig = {
       innerSize: 0.015 * window.innerHeight,
       outerSize: 0.04 * window.innerHeight,
