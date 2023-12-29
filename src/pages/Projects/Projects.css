@@ -11,12 +11,14 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    margin: 2vh auto;
+    margin-top: 7%;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 5%;
     max-width: 81%;
     padding: 2.5vh;
     border-radius: 4vh;
     box-shadow: 0 0 1vh rgba(0, 0, 0, 0.5);
-    margin-bottom: 5%;
 }
 
 .project-card {

@@ -3,6 +3,8 @@ import './Home.css';
 import {data, skills} from "../Content";
 import { NavLink } from "react-router-dom";
 import ReactTyped from "typewriter-effect";
+import Masonry from 'masonry-layout';
+import imagesLoaded from 'imagesloaded';
 import imageOne from '../../assets/images/home/image-one.png';
 import imageTwo from '../../assets/images/home/image-two.png';
 import imageThree from '../../assets/images/home/image-three.png';
@@ -65,66 +67,89 @@ function Home({loaded}) {
     }
   }, [loaded]); // Dependency on loaded
 
+  // Skills rendering
+  const renderSkillButtons = () => {
+    return skills.map((skill, index) => (
+        <button
+            key={index}
+            className="home_project_btn"
+            style={{
+                backgroundColor: skill.backgroundColor,
+                color: skill.textColor
+            }}
+            onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = skill.backgroundColorHover;
+                e.currentTarget.style.color = skill.textColorHover;
+
+                // Update icon color on hover
+                const iconElement = e.currentTarget.querySelector('.icon');
+                if (iconElement) {
+                    iconElement.style.color = skill.iconColorHover;
+
+                    // Swap icon if iconHover is provided
+                    if (skill.iconHover) {
+                        iconElement.classList.remove(skill.icon);
+                        iconElement.classList.add(skill.iconHover);
+                    }
+                }
+            }}
+            onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = skill.backgroundColor;
+                e.currentTarget.style.color = skill.textColor;
+
+                // Revert icon color and icon when not hovered
+                const iconElement = e.currentTarget.querySelector('.icon');
+                if (iconElement) {
+                    iconElement.style.color = skill.iconColor;
+
+                    // Revert to original icon if iconHover is provided
+                    if (skill.iconHover) {
+                        iconElement.classList.remove(skill.iconHover);
+                        iconElement.classList.add(skill.icon);
+                    }
+                }
+            }}
+        >
+            {typeof skill.icon === 'string' ? (
+                <img
+                    src={skill.icon}
+                    alt={skill.name}
+                    className="icon"
+                    style={{ color: skill.iconColor }}
+                />
+            ) : (
+                <FontAwesomeIcon
+                    icon={skill.icon}
+                    className="icon"
+                    style={{ color: skill.iconColor }}
+                />
+            )}
+            {skill.name}
+        </button>
+    ));
+};
+
+
   return (
-    <div className="App">
+    <div>
       {loading && (
         <div className={`loading-background ${slideLoading ? 'slide-out' : ''}`}>
             <div className="loader">
-                <span className="name">{data.title} </span>
-                <span className="portfolio"> {data.displayedPurpose}</span>
+                <span className="loadTitleOne">{data.loadTitleOne} </span>
+                <span className="loadTitleTwo"> {data.loadTitleTwo}</span>
             </div>
         </div>
       )}
 
         {!loading && (
             // Your main app content goes here
-            <div className="App" style={{backgroundColor: "black"}}>
-              {/*<button className="hamburger" onClick={toggleMenu}>*/}
-              {/*  &#9776; /!* Hamburger Icon *!/*/}
-              {/*</button>*/}
-
-              {/* Vertical Menu */}
-              {/*<nav className={`vertical-menu ${menuOpen ? 'open' : ''}`}>*/}
-              {/*  <ul className="vertical-menu">*/}
-              {/*    <li><NavLink to="/" className="nav-link">Home</NavLink></li>*/}
-              {/*    <li><NavLink to="/education" className="nav-link">Education</NavLink></li>*/}
-              {/*    <li><NavLink to="/projects" className="nav-link">Projects</NavLink></li>*/}
-              {/*    <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>*/}
-              {/*    /!* Add other navigation links here *!/*/}
-              {/*  </ul>*/}
-              {/*</nav>*/}
-
-              <div className="center-text">
-                <div
-                    className="text-container"
-                    onMouseEnter={() => {
-                      setShowReadMore(true);
-                      setShowImage(true);
-                    }}
-                    onMouseLeave={() => {
-                      setShowReadMore(false);
-                      setShowImage(false);
-                    }}
-                >
-                  <div className={`me-text ${showReadMore ? 'hidden' : ''}`}>me?</div>
-                  {showReadMore && <div className="read-more-text">Read More</div>}
-                </div>
-              </div>
-
-              {showImage && (
-                  <div className="image-container">
-                    <img src={imageOne} alt="Example" className="main-image-one"/>
-                    <img src={imageTwo} alt="Example" className="main-image-two"/>
-                    <img src={imageThree} alt="Example" className="main-image-three"/>
-                    {/* Add more images here */}
-                  </div>
-              )}
-
+            <div style={{backgroundColor: "black"}}>
               <div className="title">
                 {data.title}
               </div>
 
               <h1 className="subtitle">
+                A&nbsp;
                 <ReactTyped
                     options={{
                       strings: data.animated,
@@ -135,13 +160,6 @@ function Home({loaded}) {
                     }}
                 />
               </h1>
-              {/*<h1 className={`subtitle subtitle-container${subtitleFadeOut ? 'fade-out' : ''}`}>*/}
-              {/*  {data.animated[currentSubtitleIndex]}*/}
-              {/*</h1>*/}
-
-              <div className="websitePurpose">
-                {data.websitePurpose}
-              </div>
 
               <div className="description">
                 {data.description.split('\n').map((line, index) => (
@@ -152,26 +170,16 @@ function Home({loaded}) {
                 ))}
               </div>
 
-              <div className="language">
-                {data.skill}
+              <div className="skillText_container">
+                <div className="skillText">
+                  {data.skill}
+                </div>
               </div>
 
-              <h1 className="languages">
-                {/*<ReactTyped*/}
-                {/*    options={{*/}
-                {/*      strings: skills,*/}
-                {/*      autoStart: true,*/}
-                {/*      delay: 50,*/}
-                {/*      loop: true,*/}
-                {/*      deleteSpeed: 6,*/}
-                {/*      cursor: ">",*/}
-                {/*    }}*/}
-                {/*/>*/}
-                <div className={`skill-container ${skillFadeOut ? 'fade-out' : ''}`}>
-                  <FontAwesomeIcon icon={skills[currentSkillIndex].icon}/>&nbsp;&nbsp;
-                  {skills[currentSkillIndex].name}
-                </div>
-              </h1>
+              {/* New container element */}
+              <div className="home_project_btn_container">
+                {renderSkillButtons()}
+              </div>
             </div>
         )}
     </div>

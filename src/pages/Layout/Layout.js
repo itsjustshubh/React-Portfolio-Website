@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import AnimatedCursor from 'react-animated-cursor';
 import { styling } from "../Content";
-import { NavLink } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 import './Layout.css';
 
 function Layout({ children, loading }) {
@@ -39,7 +39,11 @@ function Layout({ children, loading }) {
     preloadVideo(styling.background);
   }, []);
 
+  const location = useLocation();
 
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <div className="layout-background">
@@ -49,30 +53,49 @@ function Layout({ children, loading }) {
       </video>
 
       {!loading && ( // Conditionally render the navbar based on the loading state
-        <div className="navbar">
-            <ul>
-              <li><NavLink to="/" className="nav-link">Home</NavLink></li>
-              <li><NavLink to="/education" className="nav-link">Education</NavLink></li>
-              <li><NavLink to="/projects" className="nav-link">Projects</NavLink></li>
-              <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
-              {/* Add other navigation links as needed */}
-            </ul>
-        </div>
+          <div className="navbar">
+              {/*<ul>*/}
+              {/*    <li><NavLink to="/" className="nav-link">Home <button className="layout_button">/</button></NavLink>*/}
+              {/*    </li>*/}
+              {/*    <li><NavLink to="/education" className="nav-link">Education</NavLink></li>*/}
+              {/*    <li><NavLink to="/projects" className="nav-link">Projects</NavLink></li>*/}
+              {/*    <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>*/}
+              {/*    /!* Add other navigation links as needed *!/*/}
+              {/*</ul>*/}
+              <ul>
+                  <li><NavLink to="/" className={isActive('/') ? 'nav-link nav-link-active' : 'nav-link'}>
+                      Home&nbsp;
+                      <button className="layout_button">
+                          /
+                      </button>
+                  </NavLink>
+                  </li>
+                  <li><NavLink to="/education"
+                               className={isActive('/education') ? 'nav-link nav-link-active' : 'nav-link'}>Education</NavLink>
+                  </li>
+                  <li><NavLink to="/projects"
+                               className={isActive('/projects') ? 'nav-link nav-link-active' : 'nav-link'}>Projects</NavLink>
+                  </li>
+                  <li><NavLink to="/contact"
+                               className={isActive('/contact') ? 'nav-link nav-link-active' : 'nav-link'}>Contact</NavLink>
+                  </li>
+              </ul>
+          </div>
       )}
 
-      {children}
+        {children}
     </div>
   );
 }
 
 document.querySelectorAll('.navbar ul li a').forEach(item => {
-  item.addEventListener('mouseover', () => {
-    item.style.transition = 'all 0.8s ease-in';
-  });
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'all 0.8s ease-in';
+    });
 
-  item.addEventListener('mouseout', () => {
-    item.style.transition = 'all 0.5s ease-out';
-  });
+    item.addEventListener('mouseout', () => {
+        item.style.transition = 'all 0.5s ease-out';
+    });
 });
 
 export default Layout;

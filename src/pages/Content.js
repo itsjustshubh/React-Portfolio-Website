@@ -18,6 +18,7 @@ import { backgroundVideo,
     socialCloud,
     husky,
     northeastern,
+    react,
 } from './Assets';
 
 import {
@@ -90,29 +91,22 @@ const styling = {
 };
 
 const data = {
-    title: "Shubh Thorat",
+    loadTitleOne: "Shubh Thorat",
+    loadTitleTwo: "Portfolio",
+
+    title: "Hi. I'm Shubh",
     displayedPurpose: "Portfolio",
-    websitePurpose: "Digital Portfolio",
     animated: [
-        "Programming Adventurer & Tech Enthusiast",
-        "Innovative Tech Visionary & Code Wizard",
-        "Digital Explorer & Software Savant",
-        "Tech Trailblazer & Coding Connoisseur",
-        "Creative Code Artist & Tech Aficionado",
-        "Software Innovator & Technology Enthusiast",
-        "Innovative Tech Visionary & Code Wizard",
-        "Passionate Programmer & Tech Trendsetter",
-        "Cutting-Edge Developer & IT Enthusiast",
-        "Tech-Savvy Innovator & Coding Specialist",
-        "Future-Focused Technologist & Code Craftsman",
-        "Digital Creator & Technology Advocate",
+        "Programmer.",
+        "Tech Enthusiast.",
+        "Designer.",
         // add more below
     ],
     description: "In my opinion, coding has the potential to change the world in ways previously only dreamt.\n" +
         "\n" +
         "My objective is to showcase the various avenues of coding by exploring different ideas and experimenting with them.",
     your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
-    skill: "My Languages:",
+    skill: "Languages:",
     contactTitle: "Connect with me on:",
     projectsTitle: "Welcome To My Projects",
 };
@@ -122,23 +116,34 @@ const skills = [
         hours: 1,
         name: "Python",
         icon: faPython,
+        // textColor: "white",
+        // textColorHover: "black",
+        // backgroundColor: "rgb(53, 114, 165)", // Python logo color
+        // backgroundColorHover: "orange",
     },
     {
         hours: 1,
         name: "Java",
         icon: faJava,
+        // textColor: "white",
+        // textColorHover: "black",
+        // backgroundColor: "rgb(150, 75, 0)", // Java logo color
+        // backgroundColorHover: "rgb(175, 100, 25)",
     },
+    {
+        hours: 1,
+        name: "React",
+        icon: faReact,
+        iconColor: "black",
+        iconColorHover: "darkBlue",
+    },
+    // ... other skills ...
     {
         hours: 1,
         name: "JavaScript",
         icon: faJs,
     },
     // ... Add other skills here
-    {
-        hours: 1,
-        name: "React",
-        icon: faReact,
-    },
     {
         hours: 1,
         name: "Node.js",

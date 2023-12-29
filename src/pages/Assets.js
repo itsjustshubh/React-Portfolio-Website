@@ -20,5 +20,6 @@ export { default as edith } from '../assets/icons/edith.svg';
 export { default as socialCloud } from '../assets/icons/social-cloud.svg';
 export { default as northeastern } from '../assets/icons/northeastern.svg';
 export { default as husky } from '../assets/icons/northeastern-husky.svg';
+export { default as react } from '../assets/icons/react.svg';
 
 // Add any other asset exports below...

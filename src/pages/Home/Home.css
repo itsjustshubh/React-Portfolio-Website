@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 /* Navigation Link Styles */
@@ -68,17 +69,17 @@ body {
   font-family: 'Questrial', sans-serif;
 }
 
-.name, .portfolio {
+.loadTitleOne, .loadTitleTwo {
   font-weight: 700;
   display: inline;
   animation: fadeOut 1s ease forwards;
 }
 
-.name {
+.loadTitleOne {
   animation-delay: 1s;
 }
 
-.portfolio {
+.loadTitleTwo {
   animation-delay: 2s;
 }
 
@@ -113,36 +114,129 @@ body {
   opacity: 1;
 }
 
+.title, .subtitle, .description {
+  font-family: 'Plantagenet Cherokee', sans-serif;
+  left: 8%;
+}
+
 .title {
   position: absolute;
-  top: 11%;
-  left: 3%;
-  zIndex: 1;
+  top: 30%;
   color: white;
-  font-size: 6vh;
+  font-size: 10vh;
   font-weight: bold;
-  font-family: 'Helvetica', sans-serif;
 }
 
 .subtitle {
+  display: flex; /* Aligns children inline */
+  align-items: center; /* Centers items vertically */
+  white-space: nowrap; /* Prevents wrapping into multiple lines */
   position: absolute;
-  top: 15.5%;
-  left: 3.1%;
-  z-index: 1;
+  top: 36%;
   color: white;
-  font-size: 3.5vh;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 8vh;
 }
 
-.websitePurpose {
+.description {
+  white-space: pre-line;
   position: absolute;
-  font-size: 3vh;
-  top: 13%;
-  right: 8%;
-  zIndex: 1;
+  top: 55%;
+  color: white;
+  font-size: 2.3vh;
+  line-height: 1.5;
+  font-family: 'Questrial', sans-serif;
+  font-weight: bold;
+  max-width: 90vh;
+  text-align: left;
+}
+
+.home_project_btn_container {
+  position: absolute;
+  top: 35%;
+  left: 70%;
+  border-radius: 5vh;
+
+  /* Optional: additional styling */
+  width: 40vh; /* Example width */
+  height: 55vh; /* Example height */
+  /*transform: translate(-50%, -50%); !* Center the element at the specified position *!*/
+  padding: 2vh; /* Example padding */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the space between buttons */
+  justify-content: flex-start; /* Align buttons to the start */
+  align-items: flex-start; /* Align items at the start vertically */
+  overflow: auto; /* Hide overflow */
+}
+
+.home_project_btn {
+  width: auto; /* Width determined by content */
+
+  background-color: rgba(255, 255, 255, 50%);
+  font-weight: bold;
+  border: white 0.3vh solid;
+  cursor: pointer;
+  border-radius: 2vh;
+  text-decoration: none;
+  transition: color 0.6s cubic-bezier(0.55, 0, 0.1, 1),
+  border-color 0.6s cubic-bezier(0.55, 0, 0.1, 1),
+  box-shadow 0.7s cubic-bezier(0.55, 0, 0.1, 1),
+  background-color 0.3s, transform 0.3s;
+
+  text-align: center; /* Center-align the text */
+  height: auto; /* Allow button height to expand */
+  align-items: center; /* Center content vertically */
+
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+  flex: 1 1 auto; /* Allow flexibility in both growing and shrinking */
+  min-width: 30%; /* Minimum width of each button, adjust as needed */
+  margin: 0.1vh; /* Reduced margin */
+  font-size: 4.5vh; /* Reduced font size, adjust as needed */
+  padding: 0.3vh 1vh; /* Adjusted padding, modify as needed */
+  text-overflow: ellipsis; /* Add an ellipsis for overflowed text */
+  overflow: hidden; /* Hide text overflow */
+  white-space: nowrap; /* Prevent text from wrapping */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center content horizontally */
+}
+
+.icon {
+  transition: color 0.3s ease;
+}
+
+.home_project_btn .icon, .home_project_btn svg {
+    height: 3.8vh; /* Adjust based on your design */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 0.7vh; /* Space between icon and text */
+}
+
+.home_project_btn:hover {
+    color: black;
+    border-color: navajowhite;
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.skillText_container {
+  top: 30%;
+  left: 71%;
+  position: absolute;
+  width: 40vh;
+  height: 6vh;
+  text-align: center; /* Center-align the text */
+  justify-content: center; /* Center content horizontally */
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center content vertically */
+  font-family: 'Plantagenet Cherokee', sans-serif;
+  font-weight: bold;
+  font-size: 4vh;
+}
+
+.skillText {
+  position: absolute;
+  text-align: center;
   color: white;
   font-weight: bold;
-  font-family: 'Questrial', sans-serif;
 }
 
 .language {
@@ -160,25 +254,9 @@ body {
   position: absolute;
   bottom: 3%;
   left: 3%;
-  z-index: 1;
   color: white;
   font-size: 3vh;
   font-family: 'Questrial', sans-serif;
-}
-
-.description {
-  white-space: pre-line;
-  position: absolute;
-  bottom: 6%;
-  right: 6%;
-  zIndex: 1;
-  color: white;
-  font-size: 2.3vh;
-  line-height: 1.5;
-  font-family: 'Questrial', sans-serif;
-  font-weight: bold;
-  max-width: 26vh;
-  text-align: left;
 }
 
 .hidden {

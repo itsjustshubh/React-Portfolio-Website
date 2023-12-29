@@ -95,8 +95,6 @@ function Projects() {
                 <span className="back-button-icon">←</span> Back
             </button>
 
-            <h1 className="project-header">Welcome To My Projects</h1>
-
             <div className="projects-container">
                 {sortedProjects.map((project, index) => (
                     <div key={index} className="project-card"
