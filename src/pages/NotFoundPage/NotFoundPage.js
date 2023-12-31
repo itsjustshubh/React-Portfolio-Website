@@ -10,6 +10,17 @@ const NotFoundPage = () => {
     const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
     const [fadeOut, setFadeOut] = useState(false);
 
+    useEffect(() => {
+        // Hide the navbar
+        const navbar = document.querySelector('.navbar');
+        if (navbar) navbar.style.display = 'none';
+
+        // Reset the navbar style when component unmounts
+        return () => {
+            if (navbar) navbar.style.display = '';
+        };
+    }, []);
+
     const goToPage = () => {
         navigate(errorPage.button.link);
     };

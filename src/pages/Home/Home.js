@@ -35,7 +35,7 @@ function Home({loaded}) {
     }, 4000); // Change skill every 4 seconds (includes 1s for fade out)
 
     return () => clearInterval(skillInterval);
-  }, []);
+  }, [skillsLength]);
 
   const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState(0);
   const [subtitleFadeOut, setSubtitleFadeOut] = useState(false);
@@ -53,7 +53,7 @@ function Home({loaded}) {
     }, 4000); // Change subtitle every 4 seconds (includes 1s for fade out)
 
     return () => clearInterval(subtitleInterval);
-  }, []);
+  }, [subtitlesLength]);
 
   // Effects for loading and cursor movement
   useEffect(() => {

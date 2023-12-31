@@ -18,10 +18,6 @@ function Contact() {
 
     return (
         <div className="contact-page">
-            <button onClick={handleBackClick} className="back-button">
-                <span className="back-button-icon">←</span> Back
-            </button>
-
             <div className="education-container">
                 <div className="social-links">
                     {socialprofils.map((profile, index) => (

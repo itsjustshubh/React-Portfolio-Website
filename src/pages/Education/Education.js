@@ -32,12 +32,6 @@ function Education() {
 
   return (
     <div className="education-page">
-      {/* Back Button */}
-      <button onClick={handleBackClick} className="back-button">
-        <span className="back-button-icon">←</span> {/* Unicode arrow for visual representation */}
-        Back
-      </button>
-
       <div className="education-container">
         {/* Education Slider */}
         <div className="education-slider">

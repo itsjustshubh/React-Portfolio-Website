@@ -54,14 +54,6 @@ function Layout({ children, loading }) {
 
       {!loading && ( // Conditionally render the navbar based on the loading state
           <div className="navbar">
-              {/*<ul>*/}
-              {/*    <li><NavLink to="/" className="nav-link">Home <button className="layout_button">/</button></NavLink>*/}
-              {/*    </li>*/}
-              {/*    <li><NavLink to="/education" className="nav-link">Education</NavLink></li>*/}
-              {/*    <li><NavLink to="/projects" className="nav-link">Projects</NavLink></li>*/}
-              {/*    <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>*/}
-              {/*    /!* Add other navigation links as needed *!/*/}
-              {/*</ul>*/}
               <ul>
                   <li><NavLink to="/" className={isActive('/') ? 'nav-link nav-link-active' : 'nav-link'}>
                       Home&nbsp;

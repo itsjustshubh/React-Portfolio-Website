@@ -91,10 +91,6 @@ function Projects() {
 
     return (
         <div className="projects-page">
-            <button onClick={handleBackClick} className="back-button">
-                <span className="back-button-icon">←</span> Back
-            </button>
-
             <div className="projects-container">
                 {sortedProjects.map((project, index) => (
                     <div key={index} className="project-card"

@@ -179,7 +179,7 @@ body {
   cursor: pointer;
   border-radius: 2vh;
   text-decoration: none;
-  transition: color 0.6s cubic-bezier(0.55, 0, 0.1, 1),
+  transition: color 0.3s cubic-bezier(0.55, 0, 0.1, 1),
   border-color 0.6s cubic-bezier(0.55, 0, 0.1, 1),
   box-shadow 0.7s cubic-bezier(0.55, 0, 0.1, 1),
   background-color 0.3s, transform 0.3s;
@@ -201,10 +201,6 @@ body {
   justify-content: center; /* Center content horizontally */
 }
 
-.icon {
-  transition: color 0.3s ease;
-}
-
 .home_project_btn .icon, .home_project_btn svg {
     height: 3.8vh; /* Adjust based on your design */
     width: auto; /* Maintain aspect ratio */
@@ -212,7 +208,7 @@ body {
 }
 
 .home_project_btn:hover {
-    color: black;
+    color: navajowhite;
     border-color: navajowhite;
     transform: scale(1.1); /* Slightly increase size on hover */
 }
