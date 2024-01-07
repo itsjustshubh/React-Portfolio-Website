@@ -46,13 +46,7 @@ function Layout({ children, loading }) {
   };
 
   return (
-    <div className="layout-background">
-      <AnimatedCursor {...cursorConfig} />
-      <video className="background-video" autoPlay muted loop playsInline>
-        <source src={styling.background} type="video/mp4"/>
-      </video>
-
-      {!loading && ( // Conditionally render the navbar based on the loading state
+      <div className="layout-background">
           <div className="navbar">
               <ul>
                   <li><NavLink to="/" className={isActive('/') ? 'nav-link nav-link-active' : 'nav-link'}>
@@ -73,10 +67,13 @@ function Layout({ children, loading }) {
                   </li>
               </ul>
           </div>
-      )}
+          <AnimatedCursor {...cursorConfig} />
+          <video className="background-video" autoPlay muted loop playsInline>
+              <source src={styling.background} type="video/mp4"/>
+          </video>
 
-        {children}
-    </div>
+          {children}
+      </div>
   );
 }
 

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import './Home.css';
-import {data, skills} from "../Content";
+import {meta, data, skills} from "../Content";
 import { NavLink } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 import ReactTyped from "typewriter-effect";
 import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
@@ -132,6 +133,13 @@ function Home({loaded}) {
 
   return (
     <div>
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords.join(", ")} />
+        {/* Add other meta tags as needed */}
+      </Helmet>
+
       {loading && (
         <div className={`loading-background ${slideLoading ? 'slide-out' : ''}`}>
             <div className="loader">

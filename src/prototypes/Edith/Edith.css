@@ -1,0 +1,95 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensures the body and html cover the full height */
+}
+
+.edith-prototype-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh; /* Ensures the container is at least as tall as the viewport */
+  width: 100%; /* Sets the width to the full width of the viewport */
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.edith-prototype-form-container label {
+  color: #007bff; /* Sets the color of the labels */
+  font-weight: bold; /* Makes the label text bold */
+  margin-bottom: 5px; /* Adds space below the label */
+  display: block; /* Ensures the label is on its own line */
+}
+
+.edith-prototype-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4vh;
+  margin-top: 15vh;
+  padding: 3vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5vh; /* Adds some space at the bottom */
+  width: auto; /* Full width of the parent */
+}
+
+.edith-prototype-form-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4vh;
+  padding: 3vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5vh; /* Adds some space at the bottom */
+  width: auto; /* Full width of the parent */
+}
+
+.input-field, .select-field {
+  padding: 10px;
+  margin: 20px; /* Adds space around each input/select field */
+  font-size: 16px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none; /* Removes the default focus outline */
+  color: navajowhite; /* Color of the text inside the input/select fields */
+  font-weight: normal; /* Default weight for the text */
+}
+
+.input-field:focus, .select-field:focus {
+  border-color: #007bff; /* Changes border color on focus */
+  color: white; /* Color of text when the field is focused */
+  font-weight: bold; /* Makes text bold when the field is focused */
+}
+
+.input-field::selection, .select-field::selection {
+  background-color: #007bff;
+  color: white;
+}
+
+.section-title {
+  color: #007bff; /* Color of the section titles */
+  font-size: 18px; /* Size of the section titles */
+  font-weight: bold; /* Weight of the section titles */
+  margin-top: 20px; /* Space above the section titles */
+  margin-bottom: 10px; /* Space below the section titles */
+}
+
+.submit-button {
+  padding: 15px; /* Increase padding for a larger button */
+  margin-top: 20px; /* Add space above the button */
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: navajowhite;
+  color: black;
+}

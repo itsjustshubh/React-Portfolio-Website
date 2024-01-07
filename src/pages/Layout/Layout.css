@@ -3,6 +3,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
 }
 
 .background-video {
@@ -86,4 +87,49 @@
   .layout_button {
     border: navajowhite 0.2vh solid;
   }
+}
+
+@media screen and (max-width: 600px) {
+    .layout-background {
+        cursor: auto;
+    }
+
+    .navbar {
+        background-color: navajowhite;
+        position: fixed; /* Stick navbar to the bottom of the viewport */
+        top: 90%; /* Align to the bottom */
+        border-radius: 0;
+        font-size: 1vh;
+        width: 100%; /* Ensure it covers the full width */
+        margin: 0; /* Remove any margins */
+        padding: 2vh 2vh; /* Adjust padding if necessary */
+        z-index: 10; /* Ensure it's above other elements */
+    }
+
+    .navbar ul {
+      display: flex; /* Enable flexbox */
+      justify-content: space-around; /* Adjust as per design */
+      width: 100%; /* Ensure the full width is used */
+    }
+
+    .navbar ul li {
+      border-radius: 0;
+      margin: 0; /* Remove margin */
+      width: auto; /* Allow each item to size naturally */
+      padding: 0 0; /* Add some vertical padding for better tap targets */
+    }
+
+    .nav-link {
+      padding: 0; /* Adjust as per design */
+    }
+
+    .nav-link:hover {
+      padding: 0; /* Adjust as per design */
+    }
+
+    .nav-link-active {
+      padding: 0; /* Adjust as per design */
+    }
+
+    /* Adjustments for nav-link if necessary */
 }

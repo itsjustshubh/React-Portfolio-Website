@@ -7,6 +7,8 @@ import Education from './pages/Education/Education';
 import Projects from './pages/Projects/Projects';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
+import Edith from './prototypes/Edith/Edith';
+
 function App() {
   const [loaded, setLoaded] = useState(false);
 
@@ -24,13 +26,15 @@ function App() {
     <Router>
     <Layout>
       <Routes>
+          {/* Main page routers */}
           <Route path="/" element={<Home loaded={!loaded} />} />
           <Route path="/education" element={<Education />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          {/*<Route path="/projects" element={<Projects />} />*/}
           <Route path="*" element={<NotFoundPage />} />
-          {/* Add other routes here */}
+
+          {/* Demo page routers */}
+          <Route path="/edith-prototype" element={<Edith />} />
         </Routes>
     </Layout>
   </Router>

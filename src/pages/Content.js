@@ -80,32 +80,25 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 // Content Configuration
-const logotext = "JOHN";
 const meta = {
-    title: "Shubh Thorat",
-    description: "I’m Shubh Thorat computer scientist _ Full stack developer, currently working in Boston",
+    title: "Shubh Thorat - Full Stack Developer",
+    description: "Explore Shubh Thorat's portfolio, featuring innovative projects in full stack development, AI, and big data.",
+    keywords: ["Shubh Thorat", "Full Stack Developer", "AI", "Big Data", "Portfolio"]
 };
 
 const styling = {
     background: backgroundVideo,
 };
 
+// Personal Data
 const data = {
     loadTitleOne: "Shubh Thorat",
     loadTitleTwo: "Portfolio",
-
     title: "Hi. I'm Shubh",
     displayedPurpose: "Portfolio",
-    animated: [
-        "Programmer.",
-        "Tech Enthusiast.",
-        "Designer.",
-        // add more below
-    ],
-    description: "In my opinion, coding has the potential to change the world in ways previously only dreamt.\n" +
-        "\n" +
+    animated: ["Programmer.", "Tech Enthusiast.", "Designer."],
+    description: "In my opinion, coding has the potential to change the world in ways previously only dreamt. " +
         "My objective is to showcase the various avenues of coding by exploring different ideas and experimenting with them.",
-    your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
     skill: "My Languages:",
     contactTitle: "Connect with me on:",
     projectsTitle: "Welcome To My Projects",
@@ -351,7 +344,7 @@ const projects = [
             {
                 buttonIcon: faCode,
                 buttonText: "Prototype",
-                buttonLink: "https://drive.google.com/file/d/1itFukhWEn5DTPpNbw-OLsEtJN5uTv1HJ/view",
+                buttonLink: "/edith-prototype",
             },
             {
                 buttonIcon: faGoogleDrive,
@@ -421,7 +414,6 @@ const errorPage = {
 
 // Exporting all configurations
 export {
-    logotext,
     meta,
     styling,
     data,
